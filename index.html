@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ascend</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css">
+<meta name="theme-color" content="#000000">
+</head>
+
+<body>
+<div class="app">
+
+<!-- HOME -->
+<section id="home" class="page active">
+  <div class="card center">
+    <h1 id="username">Ascend</h1>
+
+    <div id="profileFrame" class="profile-frame bronze">
+      <span id="profileLevel">Lv <span id="level">1</span></span>
+    </div>
+
+    <div class="xp-bar">
+      <div id="xpFill"></div>
+    </div>
+
+    <p id="streak"></p>
+
+    <button onclick="go('tasks')">Complete Tasks</button>
+    <button onclick="go('ai')">Talk to AI</button>
+  </div>
+</section>
+
+<!-- TASKS -->
+<section id="tasks" class="page">
+  <div class="card">
+    <h2>Daily Tasks</h2>
+    <div id="taskList"></div>
+  </div>
+</section>
+
+<!-- AI CHAT -->
+<section id="ai" class="page">
+  <div class="card">
+    <h2>AI Coach</h2>
+    <div id="chatBox"></div>
+    <input id="chatInput" placeholder="Say something..." />
+    <button onclick="sendChat()">Send</button>
+  </div>
+</section>
+
+<!-- NUTRITION -->
+<section id="nutrition" class="page">
+  <div class="card">
+    <h2>Nutrition</h2>
+    <button onclick="addMeal()">+ Add Meal</button>
+    <div id="nutritionList"></div>
+  </div>
+</section>
+
+<!-- NOTES -->
+<section id="notes" class="page">
+  <div class="card">
+    <h2>Notes</h2>
+    <textarea id="noteInput" placeholder="Write a thought..."></textarea>
+    <button onclick="addNote()">Save Note</button>
+  </div>
+  <div id="notesList"></div>
+</section>
+
+<!-- SETTINGS -->
+<section id="settings" class="page">
+  <div class="card">
+    <h2>Profile</h2>
+    <input id="nameInput" placeholder="Username" />
+    <button onclick="saveName()">Save</button>
+  </div>
+
+  <div class="card">
+    <h2>Task Library</h2>
+    <div id="taskLibrary"></div>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav class="nav">
+  <button onclick="go('home')">🏠</button>
+  <button onclick="go('tasks')">✅</button>
+  <button onclick="go('ai')">💬</button>
+  <button onclick="go('nutrition')">🥗</button>
+  <button onclick="go('notes')">📝</button>
+  <button onclick="go('settings')">⚙️</button>
+</nav>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
