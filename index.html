@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ascend</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="theme-color" content="#000000" />
+</head>
+
+<body>
+<div class="app">
+
+  <!-- HOME -->
+  <section id="home" class="page active">
+    <div class="card center">
+      <h1 id="username">Ascend</h1>
+
+      <div id="profileFrame" class="profile-frame bronze">
+        <span id="level">1</span>
+      </div>
+
+      <div class="xp-bar">
+        <div id="xpFill"></div>
+      </div>
+
+      <p id="streak">🔥 0 day streak</p>
+      <button onclick="aiCoach()">AI Coach</button>
+    </div>
+
+    <div class="card">
+      <h3>Today’s Tasks</h3>
+      <div id="taskList"></div>
+    </div>
+  </section>
+
+  <!-- TASK LIBRARY -->
+  <section id="tasks" class="page">
+    <div class="card">
+      <h2>Task Library</h2>
+      <p class="muted">Enable the habits you want to track</p>
+      <div id="taskLibrary"></div>
+    </div>
+  </section>
+
+  <!-- AI CHAT -->
+  <section id="ai" class="page">
+    <div class="card">
+      <h2>AI Coach</h2>
+      <div id="chatBox"></div>
+      <input id="chatInput" placeholder="Talk to your coach..." />
+      <button onclick="sendChat()">Send</button>
+    </div>
+  </section>
+
+  <!-- NUTRITION -->
+  <section id="nutrition" class="page">
+    <div class="card">
+      <h2>Nutrition</h2>
+      <p class="muted">Manual logging (AI photo coming soon)</p>
+
+      <input id="calories" type="number" placeholder="Calories" />
+      <input id="protein" type="number" placeholder="Protein (g)" />
+      <input id="carbs" type="number" placeholder="Carbs (g)" />
+      <input id="fats" type="number" placeholder="Fats (g)" />
+
+      <button onclick="saveNutrition()">Save Day</button>
+      <p id="nutritionSummary"></p>
+    </div>
+  </section>
+
+  <!-- NOTES -->
+  <section id="notes" class="page">
+    <div class="card">
+      <h2>Notes</h2>
+      <textarea id="noteInput" placeholder="Write a thought..."></textarea>
+      <button onclick="addNote()">Save Note</button>
+    </div>
+
+    <div id="notesList"></div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section id="settings" class="page">
+    <div class="card">
+      <h2>Profile</h2>
+      <input id="nameInput" placeholder="Username" />
+      <button onclick="saveName()">Save Name</button>
+    </div>
+
+    <div class="card">
+      <h2>AI Coach Style</h2>
+      <button onclick="setAI('motivational')">Motivational</button>
+      <button onclick="setAI('analytical')">Analytical</button>
+      <button onclick="setAI('silent')">Silent</button>
+    </div>
+  </section>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <button onclick="go('home')">🏠</button>
+    <button onclick="go('tasks')">✅</button>
+    <button onclick="go('ai')">💬</button>
+    <button onclick="go('nutrition')">🥗</button>
+    <button onclick="go('notes')">📝</button>
+    <button onclick="go('settings')">⚙️</button>
+  </nav>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
